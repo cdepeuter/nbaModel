@@ -1,0 +1,81 @@
+
+why am i hacking isPossessionOver, each scenario explained
+
+
+hack false
+(1459778, "372")
+	-too many players turnover for heat in data, but they still kept the ball. A bunch of fouls in the same second
+(1459753, "36")
+	-there was a jump ball, then a turnover after isJumpWinner correctly determined the possession was over, turnover event unnecessary
+(1459954, "375")
+	-jump ball, then defensive rebound for the jump winner. Defensive rebound unnecessary
+(1459925, "320")
+	-steph curry starts the qtr shooting free throws for a ref mistake in the last qtr, but that doesnt mean poss is over
+(1460173,"181")
+	-loose ball foul on defensive team while after missed ft, if a lot of these come up need to incorporate 
+(1459745, "329")
+	-motiejunas starts the poss shooting fts. No real explanation but 1 empty event before mustve been a tech. Bad data
+(1459973, "102")
+	-loose ball foul after free throws, same as above. Issue is how to separate the two different free throw events, can say both of them are false. Keep hacking this scenarios
+(1460184, "440")
+	-inbounds foul to start the possession, its not over here
+(1459497, "345")
+	-away from play foul after free throws, same as above
+(1460216, "337")
+	-loose ball foul situation, same as above, ugh gonna need a real soln here
+(1459666, "249"), (1459666, "253")
+	-flagrant foul right after so its not over on 249, the ft, then 253 is an erroneous defensive rebound after a missed technical free throw, weird scenario
+(1460551, "369")
+	-belinelli shooting fts, 3 of 3, but was actually after a flagrant foul, so they get ball back
+(1460704, "252")
+	-jump ball right before this, correctly determined, steal in this event is erroneous
+(1570542, "307")
+	-loose ball foul off the ball at the same time as the made shot. The free throw is in the pbp before the shot
+(1570617, "16")
+	-jump ball, then defensive rebound right after jump. dreb unnecessary
+(1570748, "66")
+ 	-theres a missing defensive rebound here, on the possession after this, even on NBA.com, best way to deal is say poss didnt actually and count two poss for one. way too long and 6 pt poss, but whatever 
+(1571124, "232")
+	-"jump ball turnover" but we already figured out it was a turnover when the wrong team lost the jump
+(1571086, "365"
+	-"jump ball turnover" but we already figured out it was a turnover when the wrong team lost the jump
+(1570839, "258")
+	-Damian lillard turnover in the middle of a bunch of events for the other team, this is out of place
+(1570987, "337")
+	-"magic defensive rebound after missed ft 1 of 2, but theres still ft 2 of 2 so this doesnt make sense"
+1571694, "212")
+	-flagrant foul along with the shot away from ball, so the thunder keep the ball
+(1571161, "388")
+	-play by play says ft 1 of 1, its actually 1 of 2
+
+hack true
+(1459678 , "12")
+	-otto porter makes some free throws, and then the brook lopez shot came in at the same second even though it happend much later
+(1460579, "352")
+	-technical and flagrants and stuff all happend right after this play, but the possession still was over here
+(1459493, "11")
+	-a whole lot of data/events comes in for this one second, understandably messes things up
+(1460147, "151")
+	-away from play foul comes twice (away from play fould & off turnover foul) with charges and techs as well
+(1459928, "516")
+	-weird away from play foul w/free throw
+(1577618, "479")
+	-shooting foul->missed ft-> reb->made shot,  all in same second so second made shot sees shooting foul for first shot. Surprised this doesnt happen mroe
+(1570529, "17")
+	-same as immediately above
+(1570839, "260")
+	-to fix the damian lillard misplaced turnover in this game in hackFalse above, need to get the possession back to the right team
+(1571103, "182")]
+	-made shot for celtics comes at same time as next made shot for wiz, when wall gets fouled. Says false because of the foul on second shot
+(1570615, "442")
+	-away from play foul within last 2 minutes, but they didnt keep the ball? dont think this was actually an away from play foul bad data
+(1571476, "467")
+	-Celtics shot comes in with same pbp time as shot + foul before, didnt actually happen at the same time
+(1571462, "473")
+	-this was a long weird sequence involving an away from play foul as well as a delay of game violation before the free throws for the foul
+ (1570843, "331")
+ 	-lost mid game jump with a turnover in the supposed same second,
+ (1571428, "516")
+ 	-away from play foul in last 2 mins, but it comes after this play, only data says it was same second
+ (1571409, "15")
+ 	-shooting foul on prev shot, they came in at the "same time"
