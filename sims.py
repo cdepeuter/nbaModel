@@ -70,7 +70,7 @@ def simGame(away, home):
     homeTransD = models.getTeamTrans(home, "def", "home")
     awayTransO = models.getTeamTrans(away, "off", "away")
     awayTransD = models.getTeamTrans(away, "def", "away")
-    num = 500
+    num = 2000
     a = 0.0
     h = 0.0
     awaytop = 0
