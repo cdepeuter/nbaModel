@@ -68,23 +68,23 @@ def buildEventTree():
 	return False
 
 def scrapeGameJSON(id):
-	 url = "http://www.si.com/pbp/liveupdate?json=1&sport=basketball%2Fnba&id="+str(id)+"&box=true&pbp=true&linescore=true"
-    print(url)
-    data = json.loads(urllib2.urlopen(url).read())
-    #print(data['apiResults'])
-    seasonType = data['apiResults'][0]['league']['season']['eventType'][0]['name']
-    print(seasonType)
-    seasonConvert = {"Preseason": "pre.", "Regular Season": "reg."}
-    filename = "games/"+year+"/"+seasonConvert[seasonType]+str(id)+".json"
-    print(filename)
-    f = open(filename, 'w')
-    json.dump(data, f)
+	url = "http://www.si.com/pbp/liveupdate?json=1&sport=basketball%2Fnba&id="+str(id)+"&box=true&pbp=true&linescore=true"
+	print(url)
+	pg = urllib2.urlopen(url).read()
+	data = json.loads(pg)
+	seasonType = data['apiResults'][0]['league']['season']['eventType'][0]['name']
+	seasonConvert = {"Preseason": "pre.", "Regular Season": "reg."}
+	filename = "games/"+year+"/"+seasonConvert[seasonType]+str(id)+".json"
+	f = open(filename, 'w')
+	json.dump(data, f)
 
 if __name__ == "__main__":
 	global year
+	global debug
 	year = settings.year
+	debug = settings.debug
 	ids = getAllIds()
 	for i in ids:
-		scrapeGameJSON(id)
+		scrapeGameJSON(i)
 	   
 

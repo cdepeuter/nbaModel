@@ -47,6 +47,10 @@ hack false
 	-flagrant foul along with the shot away from ball, so the thunder keep the ball
 (1571161, "388")
 	-play by play says ft 1 of 1, its actually 1 of 2
+(1571131, "98")
+	-there was actually a shooting foul on this shot, but foul play time is 2 seconds later
+
+
 
 hack true
 (1459678 , "12")
@@ -71,6 +75,8 @@ hack true
 	-away from play foul within last 2 minutes, but they didnt keep the ball? dont think this was actually an away from play foul bad data
 (1571476, "467")
 	-Celtics shot comes in with same pbp time as shot + foul before, didnt actually happen at the same time
+(1571260, "382")
+	-away from play foul earlier in same second, but wrong team, not all events were this second
 (1571462, "473")
 	-this was a long weird sequence involving an away from play foul as well as a delay of game violation before the free throws for the foul
  (1570843, "331")
@@ -79,3 +85,5 @@ hack true
  	-away from play foul in last 2 mins, but it comes after this play, only data says it was same second
  (1571409, "15")
  	-shooting foul on prev shot, they came in at the "same time"
+ (1571629, "18")
+ 	-like 10 events, 3 possessions come in at this one second, stat guy at the arena hammered

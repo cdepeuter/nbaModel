@@ -5,6 +5,7 @@ This project scrapes possession data from play-by-play logs on si.com, and uses 
 ##Building yourself
 
 To run locally:
+
 	1. change your desired year in settings.py (2014,2015 valid)
 	2. run scrape.py
 	3. run parse.py
