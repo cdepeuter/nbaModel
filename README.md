@@ -7,6 +7,7 @@ This project scrapes possession data from play-by-play logs on si.com, and uses 
 To run locally:
 
 	1. change your desired year in settings.py (2014,2015 valid)
+	2. create games folder in repo, then create /[year] folder in /games
 	2. run scrape.py
 	3. run parse.py
 		-The last build was dec.8, sometimes there is bad data in the play by plays, so parsing may result in confusing the possession identifying function,
